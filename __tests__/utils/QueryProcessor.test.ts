@@ -25,4 +25,7 @@ describe("QueryProcessor", () => {
             "Rohan"
           ));
     })
+    test("returns my Andrew ID", () => {
+      expect(QueryProcessor("What is your Andrew ID?")).toBe("mmetwaly");
+    })
 });
