@@ -17,8 +17,11 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("age")) {
     return "67";
   }
-  if (query.toLowerCase().includes("largest")) {
-    return "73";
+  const largest = query.match(/largest:\s*([\d,\s]+)/i);
+  if (largest) {
+  const numbers = largest[1].match(/\d+/g) || [];
+  if (numbers.length > 0) {
+    return String(Math.max(...numbers.map(Number)));
   }
 
 
